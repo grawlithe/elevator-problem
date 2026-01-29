@@ -1,0 +1,114 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.building {
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  height: 600px; /* Fixed height for visualization */
+}
+
+.shaft {
+  width: 80px;
+  background: #333;
+  position: relative;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.elevator-car {
+  width: 70px;
+  height: 50px; /* Assumes 50px per floor + margin logic */
+  background: #3498db;
+  position: absolute;
+  bottom: 0; /* Starts at Floor 0 */
+  left: 5px;
+  border-radius: 3px;
+  transition: bottom 0.5s linear; /* Smooth movement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #2980b9;
+}
+
+.elevator-car.door-open {
+  background: #e74c3c;
+}
+
+.floors {
+  display: flex;
+  flex-direction: column-reverse; /* Floor 0 at bottom */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.floor {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  width: 200px;
+  padding-left: 10px;
+}
+
+.floor-label {
+  font-weight: bold;
+  width: 30px;
+}
+
+.waiting-people {
+  flex-grow: 1;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.panel, .stats, .log-panel {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex: 1;
+}
+
+.panel input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+.log-panel {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#log-output p {
+  margin: 2px 0;
+  font-size: 0.9em;
+  font-family: monospace;
+}
